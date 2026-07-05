@@ -6,5 +6,6 @@ context: We needed PCI-compliant card handling without building our own vault.
 decision: Route all card charges through Stripe via a single gateway class.
 pins:
   - symbol: src/billing/gateway.ts#StripeGateway
+    content_hash: 3c684c
 certified_by: Demo Dev
 certified_at: 2026-06-30

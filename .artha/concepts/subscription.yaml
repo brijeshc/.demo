@@ -27,5 +27,6 @@ transitions:
     trigger: user cancels
 pins:
   - symbol: src/billing/Subscription.ts#Subscription
+    content_hash: 9e94bf
 certified_by: Demo Dev
 certified_at: 2026-07-04

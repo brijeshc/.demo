@@ -8,12 +8,21 @@ steps:
     do: validate the request
     pin:
       symbol: src/billing/refund.ts#validateRefund
+      content_hash: 496fb3
   - do: reverse the charge
     pin:
       symbol: src/billing/refund.ts#issueRefund
+      content_hash: ffd713
   - do: notify the customer
 entry:
   - symbol: src/billing/refund.ts#startRefund
+    content_hash: a55b10
 pins:
   - symbol: src/checkout/Checkout.ts#Checkout
+    content_hash: 0f4420
   - symbol: src/notifications/email.ts#sendEmail
+    content_hash: 5c290d
+  - symbol: src/billing/gateway.ts#StripeGateway
+    content_hash: 3c684c
+  - symbol: src/billing/Subscription.ts#Subscription
+    content_hash: 9e94bf

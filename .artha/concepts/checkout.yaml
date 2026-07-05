@@ -16,6 +16,8 @@ transitions:
     trigger: payment confirmed
 pins:
   - symbol: src/checkout/Checkout.ts#Checkout
+    content_hash: 0f4420
   - symbol: src/billing/gateway.ts#StripeGateway
+    content_hash: 3c684c
 certified_by: Demo Dev
 certified_at: 2026-07-04
