@@ -1,0 +1,8 @@
+id: invariant.money
+kind: invariant
+status: certified
+name: Money is integer minor units
+rule: All monetary amounts are stored and computed as integer minor units (cents); never floats.
+scope: [src/billing/**]
+certified_by: Demo Dev
+certified_at: 2026-06-30

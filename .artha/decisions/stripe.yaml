@@ -1,0 +1,10 @@
+id: decision.stripe
+kind: decision
+status: certified
+title: Use Stripe for card processing
+context: We needed PCI-compliant card handling without building our own vault.
+decision: Route all card charges through Stripe via a single gateway class.
+pins:
+  - symbol: src/billing/gateway.ts#StripeGateway
+certified_by: Demo Dev
+certified_at: 2026-06-30

@@ -1,0 +1,7 @@
+source_roots: [src]
+embeddings:
+  enabled: false
+areas:
+  Billing & Money: [src/billing]
+  Buying: [src/checkout]
+  Platform: [src/auth, src/notifications]

@@ -1,0 +1,6 @@
+id: convention.naming
+kind: convention
+status: proposed
+name: Repository classes end in Repo
+rule: Data-access classes are named <Entity>Repo and expose find/save only.
+scope: [src/**]

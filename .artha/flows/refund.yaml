@@ -1,0 +1,19 @@
+id: flow.refund
+kind: flow
+status: proposed
+name: Refund a purchase
+summary: Give the money back safely.
+steps:
+  - on: customer asks
+    do: validate the request
+    pin:
+      symbol: src/billing/refund.ts#validateRefund
+  - do: reverse the charge
+    pin:
+      symbol: src/billing/refund.ts#issueRefund
+  - do: notify the customer
+entry:
+  - symbol: src/billing/refund.ts#startRefund
+pins:
+  - symbol: src/checkout/Checkout.ts#Checkout
+  - symbol: src/notifications/email.ts#sendEmail

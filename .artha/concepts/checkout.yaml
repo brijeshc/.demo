@@ -1,0 +1,21 @@
+id: concept.checkout
+kind: concept
+status: stale
+name: Checkout
+summary: Turning a cart into a paid order.
+states:
+  - name: cart
+  - name: paying
+  - name: paid
+transitions:
+  - from: cart
+    to: paying
+    trigger: submit
+  - from: paying
+    to: paid
+    trigger: payment confirmed
+pins:
+  - symbol: src/checkout/Checkout.ts#Checkout
+  - symbol: src/billing/gateway.ts#StripeGateway
+certified_by: Demo Dev
+certified_at: 2026-07-04

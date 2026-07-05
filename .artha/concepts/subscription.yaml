@@ -1,0 +1,31 @@
+id: concept.subscription
+kind: concept
+status: certified
+name: Subscription
+summary: A customer's recurring paid access - it moves through a small lifecycle as payments succeed or fail. It has retry mechanisms for failed payments
+states:
+  - name: trialing
+    effect: full access, no charge yet
+  - name: active
+    invariant: currentPeriodEnd is in the future
+  - name: past_due
+    effect: grace window before access is cut
+  - name: canceled
+    effect: access ends at period end
+transitions:
+  - from: trialing
+    to: active
+    trigger: first payment succeeds
+  - from: active
+    to: past_due
+    trigger: payment fails
+  - from: past_due
+    to: active
+    trigger: retry succeeds
+  - from: active
+    to: canceled
+    trigger: user cancels
+pins:
+  - symbol: src/billing/Subscription.ts#Subscription
+certified_by: Demo Dev
+certified_at: 2026-07-04
