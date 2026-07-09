@@ -14,6 +14,10 @@ steps:
       symbol: src/billing/refund.ts#issueRefund
       content_hash: ffd713
   - do: notify the customer
+    pin:
+      symbol: src/notifications/email.ts#sendEmail
+      content_hash: 5c290d
+  - do: reconcile the ledger
 entry:
   - symbol: src/billing/refund.ts#startRefund
     content_hash: a55b10
@@ -22,7 +26,3 @@ pins:
     content_hash: 0f4420
   - symbol: src/notifications/email.ts#sendEmail
     content_hash: 5c290d
-  - symbol: src/billing/gateway.ts#StripeGateway
-    content_hash: 3c684c
-  - symbol: src/billing/Subscription.ts#Subscription
-    content_hash: 9e94bf
