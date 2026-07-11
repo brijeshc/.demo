@@ -1,0 +1,17 @@
+id: concept.order_state
+kind: concept
+status: certified
+name: Order State
+summary: 5 states read from the `OrderState` type (cart, placed, paid, fulfilled, …). What each state means and how it transitions are not yet described.
+states:
+  - name: cart
+  - name: placed
+  - name: paid
+  - name: fulfilled
+  - name: cancelled
+pins:
+  - symbol: src/checkout/orderState.ts#OrderState
+    content_hash: "299181"
+derived_from: inferred@299181
+certified_by: Demo Dev
+certified_at: 2026-07-09
